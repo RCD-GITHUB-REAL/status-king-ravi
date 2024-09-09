@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Profile Card</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
+        
+        /* Basic Body Styling */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('https://telegra.ph/file/9ed44d68d2d271b2022ad.jpg') no-repeat center center fixed;
+            background-size: cover;
+            width: 100vw;
+            height: 100vh;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Card Styling */
+        #card {
+            height: 520px;
+            width: 320px;
+            border: 5px solid transparent;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 40px;
+            box-shadow: 0px 0px 25px #fff;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* RGB Border Animation */
+        #card:before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, red, yellow, green, blue, purple, orange);
+            background-size: 400% 400%;
+            z-index: -1;
+            border-radius: 40px;
+            animation: gradientAnimation 5s infinite;
+        }
+
+        /* Gradient Animation */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Card Hover Animation */
+        #card:hover {
+            transform: scale(1.02); /* Reduced hover scaling for smoother animation */
+            box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Profile Image Styling */
+        #icon img {
+            margin-top: 20px;
+            margin-left: 72.5px;
+            border-radius: 50%;
+            height: 175px;
+            width: 175px;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7);
+            transition: box-shadow 0.5s;
+        }
+
+        /* Image Hover Animation */
+        #icon img:hover {
+            box-shadow: 3px 0px 30px rgba(255, 255, 255, 1);
+        }
+
+        /* Name and Description Styling */
+        #name {
+            text-align: center;
+            color: red;
+            font-size: 25px;
+            margin-top: 5px;
+        }
+
+        #id {
+            text-align: center;
+            color: #ccc;
+            margin-top: -10px;
+            font-size: 14px;
+        }
+
+        #descri {
+            text-align: center;
+            color: #f3f3f3;
+            font-size: 13px;
+            font-weight: bold;
+            padding: 10px 20px;
+        }
+
+        /* Social Buttons Section */
+        #social {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        /* Social Buttons */
+        .social-btn {
+            color: white;
+            font-size: 35px;
+            border-radius: 50%;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Hover Animation for Social Buttons */
+        .social-btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 1);
+            transform: scale(1.1); /* Slightly reduced hover scaling */
+        }
+
+        /* Footer Styling */
+        .footer {
+            text-align: center;
+            color: #fff;
+            font-size: 14px;
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+        }
+
+        /* Heart Icon Animation */
+        .footer i {
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Heart Beat Animation */
+        @keyframes pulse {
+            0% {transform: scale(1);}
+            50% {transform: scale(1.2);}
+            100% {transform: scale(1);}
+        }
+    </style>
+
+    <!-- Font Awesome Icons for Social Buttons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+</head>
+<body>
+    <div id="card">
+        <!-- Profile Image Section -->
+        <div id="icon">
+            <img src="https://i.ibb.co/7YDrD5w/Wasi.png" alt="Profile Picture">
+        </div>
+
+        <!-- Name and Description Section -->
+        <div id="descri">
+            <p id="name">REAL RAVI</p>
+            <p id="id">@cyber ravi_7739</p>
+            <p>Web site create and application develope</p>
+            <p style="color: lightgreen;">CYBER RAVI </p>
+            <p>Web Developer | Competitive Programmer</p>
+            <p>Noob @ iam</p>
+        </div>
+
+        <!-- Social Media Buttons (YouTube & WhatsApp) -->
+        <div id="social">
+            <a href="https://www.youtube.com/" target="_blank" class="social-btn"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/94757660788" target="_blank" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+        </div>
+
+    </div>
+</body>
+</html>
